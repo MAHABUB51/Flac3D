@@ -1,0 +1,57 @@
+model new
+model large-strain off
+model gravity 10
+zone create brick size 25 15 4 point 0 (-700,-600,0) point 1 (0,-600,0) point 2 (-700,0,0) point 3 (-700,-600,55) ratio 1 1 1 group 'Tilite formation'
+zone create brick size 25 15 3 point 0 (-700,-600,55) point 1 (0,-600,55) point 2 (-700,0,55) point 3 (-700,-600,91) ratio 1 1 1 group 'Coal VI'
+zone create brick size 25 15 1 point 0 (-700,-600,91) point 1 (0,-600,91) point 2 (-700,0,91) point 3 (-700,-600,96) ratio 1 1 1 group 'Coarse-grained Feldspar Sandstone IV'
+zone create brick size 25 15 1 point 0 (-700,-600,96) point 1 (0,-600,96) point 2 (-700,0,96) point 3 (-700,-600,100) ratio 1 1 1 group 'Gray Siltstone and Mudstone Interlayer'
+zone create brick size 25 15 1 point 0 (-700,-600,100) point 1 (0,-600,100) point 2 (-700,0,100) point 3 (-700,-600,105) ratio 1 1 1 group 'Coal V'
+zone create brick size 25 15 5 point 0 (-700,-600,105) point 1 (0,-600,105) point 2 (-700,0,105) point 3 (-700,-600,173) ratio 1 1 1 group 'Gravelly Coarse Sandstone'
+zone create brick size 25 15 1 point 0 (-700,-600,173) point 1 (0,-600,173) point 2 (-700,0,173) point 3 (-700,-600,177) ratio 1 1 1 group 'Coal IV'
+zone create brick size 25 15 4 point 0 (-700,-600,177) point 1 (0,-600,177) point 2 (-700,0,177) point 3 (-700,-600,231) ratio 1 1 1 group 'Coarse Sandstone'
+zone create brick size 25 15 1 point 0 (-700,-600,231) point 1 (0,-600,231) point 2 (-700,0,231) point 3 (-700,-600,233) ratio 1 1 1 group 'Coal III'
+zone create brick size 25 15 2 point 0 (-700,-600,233) point 1 (0,-600,233) point 2 (-700,0,233) point 3 (-700,-600,256) ratio 1 1 1 group 'Coarse-grained Feldspar Sandstone III'
+zone create brick size 25 15 1 point 0 (-700,-600,256) point 1 (0,-600,256) point 2 (-700,0,256) point 3 (-700,-600,264) ratio 1 1 1 group 'Coal II'
+zone create brick size 25 15 3 point 0 (-700,-600,264) point 1 (0,-600,264) point 2 (-700,0,264) point 3 (-700,-600,304) ratio 1 1 1 group 'Coarse-grained Feldspar Sandstone II'
+zone create brick size 25 15 1 point 0 (-700,-600,304) point 1 (0,-600,304) point 2 (-700,0,304) point 3 (-700,-600,313) ratio 1 1 1 group 'Coal I'
+zone create brick size 25 15 2 point 0 (-700,-600,313) point 1 (0,-600,313) point 2 (-700,0,313) point 3 (-700,-600,335) ratio 1 1 1 group 'Coarse-grained Feldspar Sandstone I'
+zone create brick size 25 15 5 point 0 (-700,-600,335) point 1 (0,-600,335) point 2 (-700,0,335) point 3 (-700,-600,402) ratio 1 1 1 group 'LDT'
+zone create brick size 25 15 10 point 0 (-700,-600,402) point 1 (0,-600,402) point 2 (-700,0,402) point 3 (-700,-600,522) ratio 1 1 1 group 'UDT'
+zone create brick size 25 15 1 point 0 (-700,-600,522) point 1 (0,-600,522) point 2 (-700,0,522) point 3 (-700,-600,537) ratio 1 1 1 group 'Madhupur clay'
+zone group "Panel 1" range position-x -350 -450 position-z 85 91  
+zone cmodel assign mohr-coulomb-tension
+
+zone property density 1430 bulk  368.14e6  shear 323.71e6 cohesion 3.20e6 friction 20 range group 'Panel 1'
+zone property density 2600 bulk  740.74e6  shear 487.80e6 cohesion 2.12e6 friction 33 range group 'Tilite formation'
+zone property density 1430 bulk  368.14e6  shear 323.71e6 cohesion 3.20e6 friction 20 range group 'Coal VI'
+zone property density 2500 bulk  126.44e6  shear 90.910e6 cohesion 2.00e6 friction 31 range group 'Coarse-grained Feldspar Sandstone IV'
+zone property density 2600 bulk  149.38e6  shear 98.370e6 cohesion 2.71e6 friction 33 range group 'Gray Siltstone and Mudstone Interlayer'
+zone property density 1430 bulk  276.96e6  shear 243.53e6 cohesion 2.51e6 friction 20 range group 'Coal V'
+zone property density 2680 bulk  200.00e6  shear 137.70e6 cohesion 3.00e6 friction 37 range group 'Gravelly Coarse Sandstone'
+zone property density 1430 bulk  286.76e6  shear 252.16e6 cohesion 2.50e6 friction 20 range group 'Coal IV'
+zone property density 2640 bulk  184.48e6  shear 132.64e6 cohesion 2.60e6 friction 35 range group 'Coarse Sandstone'
+zone property density 1430 bulk  336.27e6  shear 295.69e6 cohesion 2.50e6 friction 20 range group 'Coal III'
+zone property density 2640 bulk  287.36e6  shear 206.61e6 cohesion 2.40e6 friction 31 range group 'Coarse-grained Feldspar Sandstone III'
+zone property density 1430 bulk  278.92e6  shear 245.26e6 cohesion 2.50e6 friction 20 range group 'Coal II'
+zone property density 2640 bulk  478.40e6  shear 315.04e6 cohesion 2.50e6 friction 35 range group 'Coarse-grained Feldspar Sandstone II'
+zone property density 1430 bulk  278.43e6  shear 244.83e6 cohesion 1.62e6 friction 20 range group 'Coal I'
+zone property density 2640 bulk  478.40e6  shear 315.04e6 cohesion 2.00e6 friction 35 range group 'Coarse-grained Feldspar Sandstone I'
+zone property density 1470 bulk  315.56e6  shear 236.67e6 cohesion 1.12e6 friction 26 range group 'LDT'
+zone property density 1230 bulk  13.100e6  shear 9.0200e6 cohesion 1.11e6 friction 23 range group 'UDT'
+zone property density 1200 bulk  12.670e6  shear 7.6000e6 cohesion 1.10e6 friction 15 range group 'Madhupur clay'
+
+zone gridpoint fix velocity   range union position-x 0 position-x -700
+zone gridpoint fix velocity-y
+zone gridpoint fix velocity-z range union position-z 0 position-z -500
+zone initialize-stress ratio 0.75
+model solve ratio 1e-3
+model save 'model 1'
+zone gridpoint initialize displacement (0,0,0)
+zone interface create by-face separate range group 'Panel 1' position-z 91
+zone interface node property stiffness-normal 4e6 stiffness-shear 4e6 friction 20
+
+model large-strain on
+;zone relax excavate range group 'excavation'
+zone delete range group 'Panel 1'
+model solve ratio 1e-3
+model save '1-Panel model'
